@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { View, Text, TextInput, Pressable, Alert } from 'react-native';
+import { View, Text, TextInput, Pressable, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { styles } from './styles';
 
 export const LoginScreen = () => {
@@ -23,7 +23,7 @@ export const LoginScreen = () => {
     }
 
     return (
-        <View style={styles.containter}>
+        <TouchableWithoutFeedback style={styles.containter} onPress={Keyboard.dismiss} >
             <Text style={styles.titleText}>Autorization</Text>
 
             <Text style={styles.infoText}>Login</Text>
@@ -46,6 +46,6 @@ export const LoginScreen = () => {
                 style={styles.submit}>
                 <Text style={styles.submitText}>Submit</Text>
             </Pressable>
-        </View>
+        </TouchableWithoutFeedback>
     )
 }
